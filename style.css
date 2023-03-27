@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: rgb(36, 0, 70);
+    --bg-gradient: radial-gradient(
+        circle,
+        rgba(36, 0, 70, 1) 0%,
+        rgba(90, 24, 154, 1) 100%
+    );
+    --bg-main-color: rgb(231, 200, 255);
+
+    --bg-main-gradient: linear-gradient(
+        45deg,
+        rgba(231, 200, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+
+    --ff-heading: 'Montserrat', sans-serif;
+    --ff-body: 'Poppins', sans-serif;
+
+    --fs-header-h1: clamp(2rem, 2rem + 30vw, 2.8rem);
+    --fs-text-label: clamp(0.1rem, 1rem + 100vw, 1.8rem);
+}
+
+body {
+    background: var(--bg-color);
+    background: var(--bg-gradient);
+
+    font-family: var(--ff-body);
+    font-size: normal;
+}
+
+.modal-wrapper {
+    display: grid;
+    place-content: center;
+
+    height: 100vh;
+}
+
+.card {
+    position: relative;
+
+    background: var(--bg-main-color);
+    background: var(--bg-main-gradient);
+    padding: 3rem;
+
+    max-width: 28rem;
+    margin: 2rem auto;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.273);
+
+    transition: 0.6s;
+    animation: downTop;
+    animation-duration: 1s;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 2rem;
+
+    border-radius: 10px 10px 0 0;
+
+    border-bottom: 1px solid #25003b2e;
+}
+
+.header h1 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-header-h1);
+    font-weight: bold;
+
+    color: #1c0429;
+}
+
+.form {
+    margin-top: 7rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.input-wrapper input,
+.select-wrapper select {
+    margin-top: 0.5rem;
+
+    border-radius: 5px;
+    border: none;
+
+    padding: 10px 15px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.173);
+}
+
+label {
+    font-size: 1rem;
+}
+
+.col-2 {
+    width: 100%;
+}
+
+.subtitle {
+    font-family: var(--ff-body);
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    color: #3b005de4;
+}
+
+form button {
+    background: var(--bg-gradient);
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 1rem;
+
+    color: white;
+    font-family: var(--ff-body);
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.273);
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+form button:hover {
+    transform: scale(1.1);
+}
+
+/* modal */
+
+.modal-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    background: var(--bg-gradient);
+}
+
+.modal {
+    transition: 0.6s;
+    animation-name: downTop;
+    animation-duration: 1s;
+}
+
+.modal-wrapper .modal {
+    text-align: center;
+
+    display: grid;
+    place-content: center;
+}
+
+.modal-wrapper .modal p {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-header-h1);
+
+    margin-top: 2rem;
+}
+
+.modal button {
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+}
+
+.modal button:hover {
+    transform: scale(1.2);
+}
+
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #10002b4b;
+    border-radius: 10px;
+
+    margin-top: 1rem;
+}
+
+.modal-wrapper .modal span {
+    font-family: var(--ff-body);
+    font-size: var(--fs-header-h1);
+}
+
+.porcentagem {
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+}
+
+.lucro {
+    font-size: var(--fs-header-h1);
+    margin-bottom: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes downTop {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 400px) {
+    .card {
+        max-width: 35rem;
+    }
+}
+
+@media (min-width: 500px) {
+    .card {
+        max-width: 40rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .card {
+        max-width: 45rem;
+    }
+
+    .subtitle {
+        font-size: var(--fs-text-label);
+    }
+
+    label {
+        font-size: 1.4rem;
+    }
+
+    form button {
+        padding: 1.5rem;
+
+        font-size: 1.4rem;
+    }
+}
