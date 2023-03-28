@@ -21,15 +21,29 @@
         />
     </head>
     <body>
+        <div class="alert-error">Preencha todos os campos</div>
         <div class="modal-wrapper hide">
             <div class="modal card">
                 <button class="close">
                     <img src="./assets/button-close.svg" alt="" />
                 </button>
-                <p>A lucratividade total é:</p>
                 <div class="box-wrapper">
-                    <span class="porcentagem">34%</span>
-                    <span class="lucro">R$21.834,56</span>
+                    <div class="valor-da-negociacao-total">
+                        <p>Valor total da negociação:</p>
+                        <span></span>
+                    </div>
+                    <div class="porcentagem">
+                        <p>Lucro na venda:</p>
+                        <span>34%</span>
+                    </div>
+                    <div class="lucro">
+                        <p>Lucro da venda em R$:</p>
+                        <span>R$21.834,56</span>
+                    </div>
+                    <div class="custo">
+                        <p>Custo total da operação:</p>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,6 +143,7 @@
                                 name="agua-luz"
                                 id="agua-luz sim"
                                 class="bg-none"
+                                value="sim"
                             />
                             <label for="agua-luz sim">Sim</label>
                             <br />
@@ -137,6 +152,7 @@
                                 name="agua-luz"
                                 id="agua-luz nao"
                                 class="bg-none"
+                                value="nao"
                             />
                             <label for="agua-luz nao">Não</label>
                         </div>
@@ -186,9 +202,6 @@
                                 </option>
                                 <option value="cheque">Cheque</option>
                                 <option value="boleto">Boleto</option>
-                                <option value="entrada-parcela">
-                                    Entrada + Parcelamento
-                                </option>
                                 <option value="a-vista">A vista</option>
                             </select>
                         </div>

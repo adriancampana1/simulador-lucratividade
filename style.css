@@ -25,7 +25,8 @@
     --ff-body: 'Poppins', sans-serif;
 
     --fs-header-h1: clamp(2rem, 2rem + 30vw, 2.4rem);
-    --fs-text-label: clamp(0.1rem, 1rem + 100vw, 1.3rem);
+    --fs-text-label: clamp(0.1rem, 1rem + 100vw, 1.5rem);
+    --fs-text-modal: clamp(1rem, 1rem + 10vw, 1.8rem);
 }
 
 body {
@@ -201,27 +202,50 @@ form button:hover {
     border: 1px solid #10002b4b;
     border-radius: 10px;
 
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+
+    padding: 1rem;
+}
+
+.modal-wrapper .modal p {
+    font-size: var(--fs-text-modal);
+    font-weight: normal;
 }
 
 .modal-wrapper .modal span {
     font-family: var(--ff-body);
-    font-size: var(--fs-header-h1);
-}
-
-.porcentagem {
-    margin-top: 1rem;
+    font-size: var(--fs-text-modal);
     color: green;
     font-weight: bold;
 }
 
-.lucro {
-    font-size: var(--fs-header-h1);
-    margin-bottom: 1rem;
-}
-
 .hide {
     display: none;
+}
+
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert-error {
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    padding: 1rem 0;
+    font-weight: bold;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: transform 0.5s;
+
+    z-index: 100;
 }
 
 @keyframes downTop {
@@ -250,7 +274,7 @@ form button:hover {
 
 @media (min-width: 600px) {
     .card {
-        max-width: 40rem;
+        max-width: 42rem;
     }
 
     .subtitle {
@@ -260,6 +284,6 @@ form button:hover {
     form button {
         padding: 1.5rem;
 
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 }
