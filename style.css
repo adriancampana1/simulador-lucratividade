@@ -24,8 +24,8 @@
     --ff-heading: 'Montserrat', sans-serif;
     --ff-body: 'Poppins', sans-serif;
 
-    --fs-header-h1: clamp(2rem, 2rem + 30vw, 2.8rem);
-    --fs-text-label: clamp(0.1rem, 1rem + 100vw, 1.8rem);
+    --fs-header-h1: clamp(2rem, 2rem + 30vw, 2.4rem);
+    --fs-text-label: clamp(0.1rem, 1rem + 100vw, 1.3rem);
 }
 
 body {
@@ -50,7 +50,7 @@ body {
     background: var(--bg-main-gradient);
     padding: 3rem;
 
-    max-width: 28rem;
+    max-width: 31rem;
     margin: 2rem auto;
 
     border-radius: 10px;
@@ -250,15 +250,11 @@ form button:hover {
 
 @media (min-width: 600px) {
     .card {
-        max-width: 45rem;
+        max-width: 40rem;
     }
 
     .subtitle {
         font-size: var(--fs-text-label);
-    }
-
-    label {
-        font-size: 1.4rem;
     }
 
     form button {
